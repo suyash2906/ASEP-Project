@@ -1,0 +1,9 @@
+gtts==2.5.3
+SpeechRecognition==3.10.0
+opencv-python==4.10.0.84
+mediapipe==0.10.14
+numpy==1.26.4
+pygame==2.6.0
+pillow==10.4.0
+requests==2.32.3
+
