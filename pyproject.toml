@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asep-project"
+version = "1.0.0"
+description = "AI-Based Multimodal Communication System - Text-to-Speech, Speech-to-Text, Sign Language, and Gesture Recognition"
+authors = [{name = "Suyash2906", email = "suyash@example.com"}]
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["ai", "communication", "speech", "sign-language", "gesture-recognition", "multimodal"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "SpeechRecognition==3.10.0",
+    "google-cloud-texttospeech==2.14.1",
+    "gTTS==2.4.0",
+    "opencv-python==4.8.1.78",
+    "mediapipe==0.10.9",
+    "pygame==2.5.2",
+    "Pillow==10.1.0",
+    "numpy==1.24.3",
+    "librosa==0.10.0",
+    "soundfile==0.12.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.3",
+    "pytest-cov==4.1.0",
+    "mypy==1.7.1",
+    "black==23.12.0",
+    "flake8==6.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/suyash2906/ASEP-Project"
+Repository = "https://github.com/suyash2906/ASEP-Project.git"
+Issues = "https://github.com/suyash2906/ASEP-Project/issues"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py10', 'py11']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --cov=. --cov-report=html"
